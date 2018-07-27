@@ -1,5 +1,5 @@
 plugins {
-    id "com.jfrog.bintray" version "1.6"
+    id "com.jfrog.bintray" version "1.8.4"
 }
 
 apply plugin: 'java'
@@ -7,7 +7,7 @@ apply plugin: 'maven-publish'
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
-version = '160212'
+version = '180727'
 
 repositories {
 	maven {
@@ -91,7 +91,7 @@ bintray {
     pkg {
         repo = "maven-vendor"
         userOrg = "ihmcrobotics"
-        name = "IHMCJinputMultiArch"
+        name = "jinput"
         desc = "Maven repository providing a multi-arch JInput artifact"
 				vcsUrl = "https://github.com/ihmcrobotics/ihmc-jinput-multi-arch.git"
 
