@@ -106,7 +106,7 @@ public final class Version {
    * @return The version string of this implementation.
    */
   public static String getVersion() {
-	String version = "internal-151123";
+	String version = "internal-180727";
 	if(!antAPIVersionToken.equals(apiVersion)) {
 		version = apiVersion;
 	}

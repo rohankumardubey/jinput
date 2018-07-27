@@ -43,6 +43,7 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.Set;
 import java.util.HashSet;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /** Java wrapper of RAWDEVICELIST
  * @author elias
@@ -52,6 +53,8 @@ final class RawInputEventQueue {
 	private final Object monitor = new Object();
 
 	private List devices;
+
+	private static final AtomicInteger threadNumber = new AtomicInteger(1);
 	
 	public final void start(List devices) throws IOException {
 		this.devices = devices;
@@ -110,6 +113,7 @@ final class RawInputEventQueue {
 
 		public QueueThread() {
 			setDaemon(true);
+			setName("JInput-RawInputEventQueue-" + threadNumber.getAndIncrement());
 		}
 
 		public final boolean isInitialized() {
