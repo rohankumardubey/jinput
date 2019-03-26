@@ -48,7 +48,7 @@ task addPhonyTestXml {
       project.mkdir(testDir)
 
       def noTestsFoundFile = file("$testDir/TEST-us.ihmc.NoTestsFoundTest.xml")
-      noTestsFoundFile.writeText(
+      noTestsFoundFile.text =
             "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" +
                   "<testsuite name=\"us.ihmc.NoTestsFoundTest\" tests=\"1\" skipped=\"0\" failures=\"0\" " +
                   "errors=\"0\" timestamp=\"2018-10-19T15:10:58\" hostname=\"duncan-ihmc\" time=\"0.01\">" +
@@ -56,7 +56,7 @@ task addPhonyTestXml {
                   "<testcase name=\"noTestsFoundTest\" classname=\"us.ihmc.NoTestsFoundTest\" time=\"0.01\"/>" +
                   "<system-out>This is a phony test to make CI builds pass when a project does not contain any tests.</system-out>" +
                   "<system-err><![CDATA[]]></system-err>" +
-                  "</testsuite>")
+                  "</testsuite>"
    }
 }
 
