@@ -44,10 +44,10 @@ test.finalizedBy("addPhonyTestXml")
 
 task addPhonyTestXml {
    doLast {
-      def testDir = buildDir.resolve("test-results/test")
+      def testDir = file("$buildDir/test-results/test")
       project.mkdir(testDir)
 
-      def noTestsFoundFile = testDir.resolve("TEST-us.ihmc.NoTestsFoundTest.xml")
+      def noTestsFoundFile = file("$testDir/TEST-us.ihmc.NoTestsFoundTest.xml")
       noTestsFoundFile.writeText(
             "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" +
                   "<testsuite name=\"us.ihmc.NoTestsFoundTest\" tests=\"1\" skipped=\"0\" failures=\"0\" " +
