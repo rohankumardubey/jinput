@@ -1,6 +1,6 @@
 plugins {
     id "com.jfrog.bintray" version "1.8.4"
-    id("us.ihmc.ihmc-cd") version "0.1"
+    id("us.ihmc.ihmc-cd") version "0.2"
 }
 
 apply plugin: 'java'
@@ -93,15 +93,15 @@ publishing {
 }
 
 bintray {
-    user = project.hasProperty("bintray_user") ? project.bintray_user : "invalid"
-    key = project.hasProperty("bintray_key") ? project.bintray_key : "invalid"
+    user = project.hasProperty("bintrayUsername") ? project.bintrayUsername : "invalid"
+    key = project.hasProperty("bintrayApiKey") ? project.bintrayApiKey : "invalid"
 
     if (user.equals("invalid")) {
-        project.logger.debug("Bintray user name property not set. Please set the 'bintray_user' property in ~/.gradle/gradle.properties. See https://github.com/bintray/gradle-bintray-plugin")
+        project.logger.debug("Bintray user name property not set. Please set the 'bintrayUsername' property in ~/.gradle/gradle.properties. See https://github.com/bintray/gradle-bintray-plugin")
     }
 
     if (key.equals("invalid")) {
-        project.logger.debug("Bintray API key property not set. Please set the 'bintray_key' property in ~/.gradle/gradle.properties. See https://github.com/bintray/gradle-bintray-plugin")
+        project.logger.debug("Bintray API key property not set. Please set the 'bintrayApiKey' property in ~/.gradle/gradle.properties. See https://github.com/bintray/gradle-bintray-plugin")
     }
 
     dryRun = false
