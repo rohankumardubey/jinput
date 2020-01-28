@@ -21,7 +21,7 @@ repositories {
 dependencies {
 	compile("net.java.jutils:jutils:1.0.0")
 	compile("org.apache.commons:commons-lang3:3.9")
-	compile("us.ihmc:ihmc-native-library-loader:1.2")
+	compile("us.ihmc:ihmc-native-library-loader:1.2.1")
 	runtime("net.java.jinput:jinput-platform:2.0.6:natives-windows")
 	runtime("net.java.jinput:jinput-platform:2.0.6:natives-osx")
 	runtime("net.java.jinput:jinput-platform:2.0.6:natives-linux")
