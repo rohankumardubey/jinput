@@ -3,8 +3,8 @@ plugins {
 }
 
 ihmc {
-   group = "us.ihmc.thirdparty.jinput"
-   version = "201204"
+   group = "net.java.jinput"
+   version = "2.0.6-ihmc"
    vcsUrl = "https://github.com/ihmcrobotics/jinput"
    openSource = true
 
