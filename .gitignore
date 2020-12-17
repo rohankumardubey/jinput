@@ -11,3 +11,4 @@ dist/
 eclipse_bin/
 .idea
 *.iml
+**/rebel.xml
