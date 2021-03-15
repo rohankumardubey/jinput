@@ -13,11 +13,11 @@ public class JInputLibraryLoader
       String absolutePathToDirectory;
       if (SystemUtils.IS_OS_WINDOWS)
       {
-         absolutePathToDirectory = NativeLibraryLoader.extractLibraries("", "jinput-raw", "jinput-raw_64", "jinput-dx8_64", "jinput-dx8", "jinput-wintab");
+         absolutePathToDirectory = new File(NativeLibraryLoader.extractLibraries("", "jinput-raw", "jinput-raw_64", "jinput-dx8_64", "jinput-dx8", "jinput-wintab")).getParent();
       }
       else if (SystemUtils.IS_OS_LINUX)
       {
-         absolutePathToDirectory = NativeLibraryLoader.extractLibraries("", "jinput-linux64", "jinput-linux");
+         absolutePathToDirectory = new File(NativeLibraryLoader.extractLibraries("", "jinput-linux64", "jinput-linux")).getParent();
       }
       else if (SystemUtils.IS_OS_MAC)
       {
